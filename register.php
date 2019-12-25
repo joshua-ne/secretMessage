@@ -1,9 +1,7 @@
 <?php
 
 /*
- * 注册页面
- * 还未测试
- * Todo: 一定要安排一个 reCAPTCHA！！！
+ * Registration page
  */
 
 include 'functions.php';
@@ -21,11 +19,11 @@ if ($_POST['username'] != ""){
     $result = mysqli_query($conn,"SELECT * FROM pb_users WHERE userName='$username' OR userEmail='$email' ");
     if ($row = mysqli_fetch_array($result)){
         $failed = true;
-        $errinfo = "用户名或 Email 已存在";
+        $errinfo = "userName or userEmail existed, choose another one";
     } else {
         $sql = "INSERT INTO pb_users (userName, userPassword, userPermission, userEmail) VALUES ('$username', '$hashedPassword', 0, '$email')";
         $failed = ($conn->query($sql) == false);
-        if ($failed) $errinfo = "数据库错误"; else $suc=true;
+        if ($failed) $errinfo = "Database Error!"; else $suc=true;
     }
 }
 
@@ -35,7 +33,7 @@ include 'header.php';
 <div class="container maincontent">
     <?php if (REGISTER_ENABLE == false){ ?>
         <div class="alert alert-info">
-            暂时不开放注册。
+            Registration Not Open Yet! 
         </div>
     <?php } else {?>
         <?php if (isset($_COOKIE['user'])) header("location: user.php") ?>

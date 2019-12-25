@@ -1,12 +1,12 @@
 <?php
 
-echo "请确保在 config.php 中配置了所有内容。<br>";
+echo "Please make sure you have configured everything in config.php<br>";
 
 include 'config.php';
 
 $conn = new mysqli(DB_SERVERNAME, DB_USERNAME, DB_PASSWORD, DB_NAME);
 if ($conn->connect_error) {
-    die("连接数据库失败：" . $conn->connect_error);
+    die("Fail to connect with database" . $conn->connect_error);
 }
 
 $sql = "CREATE TABLE pb_content (
@@ -18,9 +18,9 @@ date TIMESTAMP
 )";
 
 if ($conn->query($sql) === TRUE) {
-    echo "成功创建数据库 pb_content <br>";
+    echo "Successfully created table: pb_content <br>";
 } else {
-    echo "创建数据库 pb_content 失败：" . $conn->error . "<br>";
+    echo "Fail to created table: pb_content" . $conn->error . "<br>";
 }
 
 $sql = "CREATE TABLE pb_users (
@@ -33,13 +33,13 @@ date TIMESTAMP
 )";
  
 if ($conn->query($sql) === TRUE) {
-    echo "成功创建数据库 pb_users <br>";
+    echo "Successfully created table: pb_users <br>";
 } else {
-    echo "创建数据库 pb_users 失败：" . $conn->error . "<br>";
+    echo "创Fail to created table: pb_users" . $conn->error . "<br>";
 }
 
 $conn->close();
 
-echo "完成。";
+echo "Done!";
 
 ?>

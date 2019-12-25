@@ -1,8 +1,7 @@
 <?php
 
 /*
- * 登出页面
- × 注：此页面仅用于用户主动退出登录
+ * Logout page
  */
 
 include 'functions.php';

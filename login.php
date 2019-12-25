@@ -1,6 +1,6 @@
 <?php
 /*
- * 登录页面
+ * Login page
  */
 
 include 'functions.php';

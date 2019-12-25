@@ -1,8 +1,7 @@
 <?php
 
 /*
- * 用户中心 页面
- * Todo: 已分享的文字管理
+ * User page
  */
 
 include 'functions.php';

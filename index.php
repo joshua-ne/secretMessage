@@ -1,7 +1,7 @@
 <?php
 
 /*
- * 首页
+ * index page
  */
 
 include 'functions.php';
@@ -23,7 +23,7 @@ $(document).ready(function(){
             if (ret.success == false){
                 $("#showText").text(ret.info);
             } else {
-                // jQuery 一句话反转义 https://www.cnblogs.com/woostundy/p/4138173.html
+                // jQuery  https://www.cnblogs.com/woostundy/p/4138173.html
                 $("#showText").text($('<div>').html(ret.text).text());
                 $("#showUser").addClass("text-info");
                 if (<?php echo LOGIN_ENABLE ?> == true && ret.user != ""){
@@ -36,7 +36,6 @@ $(document).ready(function(){
         });
     }
     
-    // 一个坑点：jQuery 中 checkbox 如果用 val() 方法总是返回 on，正确的使用姿势：prop('checked') 返回 true/false
     $("#submit").click(function(){
         $.post("./api/push.php",
         {
@@ -70,13 +69,14 @@ $(document).ready(function(){
         <div id="showText"></div> <br><br>
         <div id="showUser"></div><?php
     } else { ?>
-        <h3>阅后即焚</h3>
-        <p>在下面的文本框中输入文字，将生成的网址分享给朋友，网址在被打开一次后就会被删除！</p>
+        <h3>Burn After Reading</h3>
+        <p>Leave your secret message in the textbox below and share the generated URL to your friend. The URL will become invalid after first access！</p>
+
         <form id="main">
             <textarea id="burntext" rows="10" maxlength="65535" class="form-control" placeholder="Worth a thousand words."></textarea><br>
             <div class="custom-control custom-checkbox" >
                 <input type="checkbox" class="custom-control-input" id="rcdTime" name="rcdTime">
-                <label class="custom-control-label" for="rcdTime" data-toggle="tooltip" data-placement="right" title="如果不勾选，数据库中不会保留这段文字的分享时间。">记录并显示分享时间</label>
+                <label class="custom-control-label" for="rcdTime" data-toggle="tooltip" data-placement="right" title="If unchecked, the timestamp of this message will not be stored in the database">Record and show sharing time</label>
             </div> <br>
             <button id="submit" type="button" class="btn btn-primary">Submit</button>
         </form>

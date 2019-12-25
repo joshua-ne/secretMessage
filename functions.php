@@ -1,14 +1,13 @@
 <?php
 
 /*
- * 一些常用的函数
- * 包括载入配置文件、JWT 模块、数据库连接
+ * util functions
  */
 
 include 'config.php';
 
 /**
- * PHP 实现 JWT
+ * PHP implementation of JWT
  * https://segmentfault.com/a/1190000016251365
  */
 
@@ -77,8 +76,8 @@ class Jwt {
     }
 
     /**
-     * base64UrlEncode https://jwt.io/ 中 base64UrlEncode 编码实现
-     * @param string $input 需要编码的字符串
+     * base64UrlEncode 
+     * @param string $input 
      * @return string
      */
     private static function base64UrlEncode(string $input)
@@ -87,8 +86,8 @@ class Jwt {
     }
 
     /**
-     * base64UrlEncode https://jwt.io/ 中 base64UrlEncode 解码实现
-     * @param string $input 需要解码的字符串
+     * base64UrlEncode 
+     * @param string $input 
      * @return bool|string
      */
     private static function base64UrlDecode(string $input)
@@ -102,10 +101,10 @@ class Jwt {
     }
 
     /**
-     * HMACSHA256 签名 https://jwt.io/ 中 HMACSHA256 签名实现
+     * HMACSHA256 签名 https://jwt.io/ 
      * @param string $input 为 base64UrlEncode(header).".".base64UrlEncode(payload)
      * @param string $key
-     * @param string $alg 算法方式
+     * @param string $alg 
      * @return mixed
      */
     private static function signature(string $input, string $key, string $alg = 'HS256')
