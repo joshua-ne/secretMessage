@@ -36,10 +36,10 @@ $(document).ready(function(){
         <h3>Login</h3>
         <form id="main">
             <?php if ($_GET['from'] == 'logout') {?>
-                <div id="hint" class="alert alert-info">您已登出，请重新登录。</div>
+                <div id="hint" class="alert alert-info">You have logged out. Please log in.</div>
             <?php } ?>
             <?php if ($_GET['from'] == 'register') {?>
-                <div id="hint" class="alert alert-info">注册成功，请登录。</div>
+                <div id="hint" class="alert alert-info">Successfully registered, you can continue to log in.</div>
             <?php } ?>
             <div class="form-group">
                 <input type="text" id="username" class="form-control" placeholder="Username">

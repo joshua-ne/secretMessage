@@ -70,7 +70,7 @@ $(document).ready(function(){
         <div id="showUser"></div><?php
     } else { ?>
         <h3>Burn After Reading</h3>
-        <p>Leave your secret message in the textbox below and share the generated URL to your friend. The URL will become invalid after first access！</p>
+        <p>Leave your secret message in the textbox below and share the generated URL to your friend. The URL will become invalid after first access!</p>
 
         <form id="main">
             <textarea id="burntext" rows="10" maxlength="65535" class="form-control" placeholder="Worth a thousand words."></textarea><br>
