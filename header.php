@@ -18,7 +18,7 @@
     <body>
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <div class="container">
-                <a class="navbar-brand" href="<?php echo SITEURL ?>">PasteBurn</a>
+                <a class="navbar-brand" href="<?php echo SITEURL ?>">Burn After Reading</a>
                 <div class="collapse navbar-collapse">
                     <!-- <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
